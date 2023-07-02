@@ -60,7 +60,7 @@ public class spawner : MonoBehaviour
         Vector3 spawnPosition;
         do
         {
-            // x, z 좌표를 -10부터 10 사이의 랜덤 값으로 설정
+            // x, z 좌표를 -9.5부터 9.5 사이의 랜덤 값으로 설정
             float x = Random.Range(-9.5f, 9.5f);
             float z = Random.Range(-9.5f, 9.5f);
             spawnPosition = new Vector3(x, 0.3f, z);
@@ -70,7 +70,7 @@ public class spawner : MonoBehaviour
         GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
         // 10초 뒤에 Enemy 제거
-        //Destroy(enemy, 10f);
+        Destroy(enemy, 10f);
 
         // 스폰된 위치 저장
         spawnedPositions.Add(spawnPosition);

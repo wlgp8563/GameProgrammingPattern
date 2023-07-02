@@ -59,16 +59,16 @@ public class GoldSpawner : MonoBehaviour
         Vector3 spawnPosition;
         do
         {
-            // x, z 좌표를 -10부터 10 사이의 랜덤 값으로 설정
+            // x, z 좌표를 -9.5부터 9.5 사이의 랜덤 값으로 설정
             float x = Random.Range(-9.5f, 9.5f);
             float z = Random.Range(-9.5f, 9.5f);
             spawnPosition = new Vector3(x, 0.3f, z);
         } while (IsPositionOverlapping(spawnPosition));
 
-        // Enemy Prefab을 스폰 위치에 생성
+        // Gold Prefab을 스폰 위치에 생성
         GameObject gold = Instantiate(GoldPrefab, spawnPosition, Quaternion.identity);
 
-        // 10초 뒤에 gold 제거
+        // 5초 뒤에 gold 제거
         Destroy(gold, 5f);
 
         // 스폰된 위치 저장
